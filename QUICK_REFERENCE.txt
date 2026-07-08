@@ -1,0 +1,112 @@
+# QUICK REFERENCE: Preview Questions Testing
+
+## TL;DR - Just Do This
+
+```
+1. MySQL Workbench → File → Open → COMPLETE_TEST_DATA_WITH_QUESTIONS.sql
+   → Ctrl+Shift+Enter (Execute)
+   
+2. Verify: SELECT COUNT(*) FROM questions;
+   Expected: 17
+   
+3. Stop/Start Tomcat (clear cache)
+
+4. http://localhost:8080/StudentActivities/
+   Login: teacher1 / password123
+   
+5. Create Exam:
+   Class: Class 10-A
+   Subject: Mathematics
+   Chapters: ✓ Algebra
+   Questions: 5
+   → Preview Questions
+   
+6. You should see 5 questions with options and answers
+```
+
+---
+
+## Files You Need
+
+| File | What to Do |
+|------|-----------|
+| COMPLETE_TEST_DATA_WITH_QUESTIONS.sql | Execute in MySQL Workbench |
+| createExam.jsp | Already fixed, just test it |
+| TESTING_CHECKLIST.md | Follow the 4-phase checklist |
+
+---
+
+## Expected Output
+
+When you click "Preview Questions":
+
+```
+DEBUG INFO:
+Selected Class ID: 1
+Selected Subject ID: 1
+Selected Chapter IDs: [1]
+Questions Found: 5
+Question Count Requested: 5
+
+📋 Question Preview (5 questions)
+├─ Total Questions: 5
+├─ Total Marks: 5
+├─ Chapters Selected: 1
+└─ Difficulty: ALL
+
+Q1. Solve: 2x + 5 = 15
+A) x = 5
+B) x = 10
+C) x = -5
+D) x = 3
+Answer: A | Difficulty: EASY | Marks: 1
+
+Q2. Simplify: (3x + 2y) + (2x + 3y)
+... (and so on)
+```
+
+---
+
+## Troubleshooting (30 seconds)
+
+| Symptom | Quick Fix |
+|---------|-----------|
+| Still shows login page | MySQL not connected or teacher1 password wrong |
+| 0 questions found | Didn't execute the SQL file yet |
+| JSP error/undefined | Tomcat cache not cleared, restart Tomcat again |
+| Preview button doesn't work | Check browser console (F12) for JS errors |
+
+---
+
+## Database Verification
+
+```sql
+-- Should all return values:
+SELECT COUNT(*) FROM schools;          -- 1
+SELECT COUNT(*) FROM classes;          -- 2
+SELECT COUNT(*) FROM subjects;         -- 2
+SELECT COUNT(*) FROM chapters;         -- 5
+SELECT COUNT(*) FROM questions;        -- 17
+SELECT COUNT(*) FROM users;            -- 3
+
+-- Should show 5 questions from Algebra:
+SELECT * FROM questions WHERE chapter_id = 1;
+```
+
+---
+
+## Success = You See This
+
+✅ Questions appear in preview section
+✅ All questions have options A-D
+✅ Correct answer shown (teacher view)
+✅ Difficulty level visible
+✅ Marks shown
+✅ DEBUG INFO displays selected values
+✅ No error messages on page
+
+---
+
+## That's It!
+
+Load → Restart → Test → Done ✓

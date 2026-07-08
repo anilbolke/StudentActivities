@@ -1,0 +1,103 @@
+═══════════════════════════════════════════════════════════════════════════════
+                    DATABASE CONNECTION LIFECYCLE FIX
+═══════════════════════════════════════════════════════════════════════════════
+
+ERROR: java.sql.SQLNonTransientConnectionException: 
+       No operations allowed after connection closed
+
+LOCATION: QuestionUploadService.java:108 (conn.commit())
+
+ROOT CAUSE: 
+  DAOs were closing the database connection after each operation using
+  try-with-resources. This broke transaction management because the
+  QuestionUploadService needed the same connection to stay open across
+  multiple DAO calls.
+
+SOLUTION:
+  Modified 3 Upload DAOs to NOT close connections in try-with-resources.
+  Only PreparedStatements are closed now. Connection lifecycle is managed
+  by QuestionUploadService (the transaction owner).
+
+═══════════════════════════════════════════════════════════════════════════════
+
+FILES MODIFIED: 3
+
+1. ClassUploadDAO.java
+   - Line 10-11: Removed Connection from try-with-resources
+   
+2. SubjectUploadDAO.java
+   - Line 11: Removed Connection from try-with-resources (SELECT)
+   - Line 27: Removed Connection from try-with-resources (INSERT)
+   - Line 48: Removed Connection from try-with-resources (another SELECT)
+   
+3. TopicUploadDAO.java
+   - Line 12: Removed Connection from try-with-resources (INSERT)
+   - Line 34: Removed Connection from try-with-resources (SELECT)
+   - Line 55: Removed Connection from try-with-resources (SELECT)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+CHANGE PATTERN:
+
+BEFORE (BROKEN):
+  try (Connection conn = DatabaseConnection.getInstance().getConnection();
+       PreparedStatement pstmt = conn.prepareStatement(sql)) {
+      // execute query
+  }  // <- Closes both connection AND statement
+
+AFTER (FIXED):
+  Connection conn = DatabaseConnection.getInstance().getConnection();
+  try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+      // execute query
+  }  // <- Closes only statement, connection stays open
+
+═══════════════════════════════════════════════════════════════════════════════
+
+DEPLOYMENT STEPS:
+
+1. Eclipse Clean Build
+   - Right-click StudentActivities → Clean... → Clean entire project
+   - Wait for "Build Complete" (0 errors)
+
+2. Export WAR
+   - Right-click StudentActivities → Export → WAR file
+   - Destination: C:\Apache\Tomcat\webapps\StudentActivities.war
+   - Click Finish
+
+3. Stop/Start Tomcat
+   - Command Prompt as Admin
+   - cd C:\Apache\Tomcat\bin
+   - catalina.bat stop
+   - Wait 10 seconds
+   - catalina.bat start
+   - Wait for initialization
+
+4. Test
+   - http://localhost:8080/StudentActivities
+   - Login as admin
+   - Upload sample-questions.txt
+   - Should succeed with 36 questions inserted
+
+═══════════════════════════════════════════════════════════════════════════════
+
+KEY INSIGHT:
+
+When using a singleton database connection:
+  ✅ DO close resources created by the DAO (statements, result sets)
+  ❌ DON'T close the connection itself
+  
+The code that OPENS the connection should CLOSE it. Doing it the other
+way breaks transaction management.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+EXPECTED RESULT AFTER DEPLOY:
+
+✅ Upload questions form loads without errors
+✅ Questions parse from TXT file successfully
+✅ All questions inserted into database
+✅ No "connection closed" errors in logs
+✅ Transaction commits successfully (all-or-nothing)
+✅ Success message shown to user
+
+═══════════════════════════════════════════════════════════════════════════════

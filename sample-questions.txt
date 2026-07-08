@@ -1,0 +1,38 @@
+CLASS|SUBJECT|CHAPTER|QUESTION_TEXT|OPTION_A|OPTION_B|OPTION_C|OPTION_D|CORRECT_ANSWER|DIFFICULTY|MARKS
+10|English|Literature|Who wrote "Romeo and Juliet"?|William Shakespeare|Christopher Marlowe|Ben Jonson|John Webster|A|Easy|1
+10|English|Grammar|Which word is a noun in the sentence: "She ran quickly"?|She|ran|quickly|the|A|Easy|1
+10|Mathematics|Algebra|What is the value of x if 2x + 5 = 13?|4|5|6|3|A|Easy|1
+10|Mathematics|Algebra|Solve: 3x - 7 = 20|9|8|7|10|A|Medium|2
+10|Mathematics|Geometry|What is the area of a circle with radius 5 cm?|78.5 sq cm|100 sq cm|50 sq cm|25 sq cm|A|Medium|2
+10|Mathematics|Geometry|The sum of angles in a triangle is|180 degrees|360 degrees|90 degrees|270 degrees|A|Easy|1
+10|Science|Physics|Which scientist developed the theory of relativity?|Albert Einstein|Isaac Newton|Stephen Hawking|Max Planck|A|Easy|1
+10|Science|Physics|What is the speed of light in vacuum?|3 × 10^8 m/s|3 × 10^5 m/s|3 × 10^10 m/s|3 × 10^6 m/s|A|Medium|2
+10|Science|Chemistry|What is the chemical symbol for Gold?|Au|Go|Gd|Gl|A|Easy|1
+10|Science|Chemistry|How many electrons does an Oxygen atom have?|8|6|10|16|A|Medium|2
+10|History|India|In which year did India gain independence?|1947|1945|1950|1952|A|Easy|1
+10|History|India|Who was the first Prime Minister of India?|Jawaharlal Nehru|Rajendra Prasad|Sardar Patel|Maulana Abul Kalam Azad|A|Medium|2
+10|History|Ancient Rome|In which year was Rome founded?|753 BCE|500 BCE|100 BCE|1000 BCE|A|Hard|3
+10|Geography|Continents|Which is the smallest continent?|Australia|Europe|North America|Africa|A|Easy|1
+10|Geography|Mountains|What is the highest mountain in the world?|Mount Everest|K2|Kangchenjunga|Lhotse|A|Easy|1
+10|English|Literature|What is the main theme of "To Kill a Mocki/logngbird"?|Racial injustice and morality|Love and romance|Adventure and exploration|War and conflict|A|Medium|2
+10|English|Grammar|Identify the verb in: "The cat sleeps peacefully"|The|cat|sleeps|peacefully|C|Easy|1
+10|Mathematics|Algebra|If 5a = 45, what is the value of a?|8|9|10|7|B|Easy|1
+10|Science|Physics|Which planet is closest to the Sun?|Mercury|Venus|Earth|Mars|A|Easy|1
+10|Science|Biology|What is the powerhouse of the cell?|Mitochondria|Nucleus|Ribosome|Chloroplast|A|Easy|1
+10|History|World|In which year did World War II end?|1945|1944|1946|1943|A|Medium|2
+10|Geography|Rivers|Which is the longest river in the world?|Nile River|Amazon River|Yangtze River|Mississippi River|A|Medium|2
+10|Social Studies|Economics|What is the basic economic problem called?|Scarcity|Inflation|Recession|Depression|A|Medium|2
+10|English|Literature|Which author wrote "1984"?|George Orwell|Aldous Huxley|Ray Bradbury|Margaret Atwood|A|Medium|2
+10|Mathematics|Trigonometry|What is the value of sin(90°)?|1|0|undefined|0.5|A|Hard|3
+11|Physics|Motion|What is the SI unit of force?|Newton|Dyne|Joule|Watt|A|Easy|1
+11|Physics|Energy|What does E=mc² represent?|Mass-energy equivalence|Energy conversion|Work done|Power output|A|Hard|3
+11|Chemistry|States of Matter|At what temperature does water boil at standard pressure?|100°C|50°C|150°C|0°C|A|Easy|1
+11|Chemistry|Organic Chemistry|What is the general formula for alkanes?|CnH2n+2|CnH2n|CnH2n-2|CnH3n|A|Medium|2
+11|Biology|Human Body|How many bones are in the adult human body?|206|195|210|250|A|Easy|1
+11|Biology|Evolution|Who proposed the theory of evolution by natural selection?|Charles Darwin|Jean-Baptiste Lamarck|Alfred Wallace|Ernst Mayr|A|Medium|2
+12|Physics|Modern Physics|What is the charge of a proton?|+1 (in relative units)|0|-1|+2|A|Easy|1
+12|Physics|Electricity|What is Ohm's Law?|V = IR|P = VI|F = ma|Q = CV|A|Medium|2
+12|Mathematics|Calculus|What is the derivative of x²?|2x|2x+1|x|3x|A|Medium|2
+12|Mathematics|Calculus|The integral of cos(x) is|sin(x) + C|cos(x) + C|-sin(x) + C|sec(x) + C|A|Hard|3
+12|Economics|Microeconomics|What is the law of demand?|As price increases demand decreases|As price decreases supply increases|As supply increases price decreases|As price increases supply increases|A|Medium|2
+12|Political Science|Government|What is the separation of powers?|Division into Executive Legislative Judicial|Division into Central and State|Division into Lok Sabha and Rajya Sabha|Division into Administrative wings|A|Medium|2

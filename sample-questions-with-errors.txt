@@ -1,0 +1,11 @@
+CLASS|SUBJECT|CHAPTER|QUESTION_TEXT|OPTION_A|OPTION_B|OPTION_C|OPTION_D|CORRECT_ANSWER|DIFFICULTY|MARKS
+10|English|Literature|Who wrote "Romeo and Juliet"?|William Shakespeare|Christopher Marlowe|Ben Jonson|John Webster|A|Easy|1
+10|English|Grammar|Which word is a noun?|She|ran|quickly|the|B|Easy|1
+10|Mathematics|Algebra|What is 2+2?|3|4|5|6||Easy|1
+10|Mathematics|Algebra|Solve: 3x - 7 = 20|9|8|7|10|A|Invalid|2
+10|Science|Physics|SI unit of force?|Newton|Dyne|Joule|Watt|E|Easy|1
+10|Science|Chemistry|Symbol for Gold?|Au|Go|Gd|Gl|A|Medium|101
+10|History|India|Year India gained independence?|||||||Easy|1
+13|Geography|Continents|Smallest continent?|Australia|Europe|North America|Africa|A|Easy|1
+10|Geography|Mountains|Highest mountain?|Mount Everest|K2|Kangchenjunga|Lhotse|A|Easy|1
+10|English|Literature|Main theme of To Kill a Mockingbird?|Racial injustice|Love|Adventure|War|A|Medium|2
